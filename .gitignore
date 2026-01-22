@@ -1,0 +1,47 @@
+# ===== Node / JS =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# ===== Build outputs =====
+dist/
+build/
+out/
+coverage/
+.vite/
+.cache/
+
+# ===== Environment files (never commit secrets) =====
+.env
+.env.*
+!.env.example
+
+# ===== Prisma / SQLite local DB (do not commit DB files) =====
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+prisma/dev.db
+server/dev.db
+server/prisma/dev.db
+
+# ===== Logs =====
+logs/
+*.log
+
+# ===== Editor / IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+
+# ===== Misc =====
+*.tgz
+*.zip

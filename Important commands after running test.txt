@@ -1,0 +1,6 @@
+# stop dev server first (Ctrl+C) if running
+
+Remove-Item -Force server\dev.db
+npm run db:migrate
+npm run db:seed
+npm run dev

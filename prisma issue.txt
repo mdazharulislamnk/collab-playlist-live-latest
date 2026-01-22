@@ -1,0 +1,23 @@
+1) Install deps (both root + server)
+npm install
+npm --prefix server install
+
+2) Generate Prisma Client
+npm --prefix server run prisma:generate
+If you don’t have that script yet, run:
+npm --prefix server exec prisma generate
+
+3) Run seed again
+bat
+npm run db:seed
+
+
+New ---
+
+
+rmdir /s /q server\node_modules
+del server\package-lock.json
+npm --prefix server install
+npm --prefix server run prisma:generate
+npm run db:migrate
+npm run db:seed

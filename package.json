@@ -1,0 +1,17 @@
+{
+  "name": "collab-playlist-live-latest",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm i && npm --prefix server i && npm --prefix client i",
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "db:migrate": "npm --prefix server run db:migrate",
+    "db:seed": "npm --prefix server run db:seed",
+    "test": "npm --prefix server test && npm --prefix client test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

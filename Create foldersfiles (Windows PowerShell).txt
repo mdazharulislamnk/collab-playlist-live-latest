@@ -1,0 +1,51 @@
+New-Item -ItemType Directory -Name "collab-playlist-100" | Out-Null
+Set-Location "collab-playlist-100"
+
+# Root
+New-Item -ItemType File -Name "package.json" | Out-Null
+New-Item -ItemType File -Name ".env.example" | Out-Null
+New-Item -ItemType File -Name "README.md" | Out-Null
+
+# Server
+New-Item -ItemType Directory -Name "server" | Out-Null
+Set-Location "server"
+New-Item -ItemType File -Name "package.json" | Out-Null
+New-Item -ItemType File -Name ".env.example" | Out-Null
+New-Item -ItemType File -Name "server.js" | Out-Null
+New-Item -ItemType File -Name "sseBus.js" | Out-Null
+New-Item -ItemType File -Name "playlistLogic.js" | Out-Null
+
+New-Item -ItemType Directory -Name "prisma" | Out-Null
+Set-Location "prisma"
+New-Item -ItemType File -Name "schema.prisma" | Out-Null
+New-Item -ItemType File -Name "seed.js" | Out-Null
+Set-Location ".."
+
+New-Item -ItemType Directory -Name "test" | Out-Null
+Set-Location "test"
+New-Item -ItemType File -Name "position.test.js" | Out-Null
+New-Item -ItemType File -Name "api.test.js" | Out-Null
+New-Item -ItemType File -Name "sse.test.js" | Out-Null
+Set-Location "..\.."
+
+# Client
+New-Item -ItemType Directory -Name "client" | Out-Null
+Set-Location "client"
+New-Item -ItemType File -Name "package.json" | Out-Null
+New-Item -ItemType File -Name "vite.config.js" | Out-Null
+New-Item -ItemType File -Name "index.html" | Out-Null
+
+New-Item -ItemType Directory -Name "src" | Out-Null
+Set-Location "src"
+New-Item -ItemType File -Name "main.jsx" | Out-Null
+New-Item -ItemType File -Name "App.jsx" | Out-Null
+New-Item -ItemType File -Name "api.js" | Out-Null
+New-Item -ItemType File -Name "position.js" | Out-Null
+New-Item -ItemType File -Name "offlineQueue.js" | Out-Null
+New-Item -ItemType File -Name "styles.css" | Out-Null
+Set-Location ".."
+
+New-Item -ItemType Directory -Name "test" | Out-Null
+Set-Location "test"
+New-Item -ItemType File -Name "position.test.js" | Out-Null
+Set-Location "..\.."

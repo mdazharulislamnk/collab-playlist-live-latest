@@ -1,0 +1,36 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Track {
+  id               String          @id
+  title            String
+  artist           String
+  album            String
+  duration_seconds Int
+  genre            String
+  cover_url        String?
+
+  playlist_tracks  PlaylistTrack[]
+}
+
+model PlaylistTrack {
+  id         String   @id @default(cuid())
+  track_id   String   @unique
+  track      Track    @relation(fields: [track_id], references: [id])
+
+  position   Float
+  votes      Int      @default(0)
+  added_by   String
+  added_at   DateTime @default(now())
+  is_playing Boolean  @default(false)
+  played_at  DateTime?
+
+  @@index([position])
+  @@index([is_playing])
+}

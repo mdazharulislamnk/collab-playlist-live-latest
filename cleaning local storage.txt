@@ -1,0 +1,2 @@
+localStorage.removeItem('collab_playlist_offline_queue_v1');
+location.reload();
