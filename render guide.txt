@@ -1,0 +1,16 @@
+ENVIRONMENT VARIABLE -
+
+DATABASE_URL = file:/tmp/dev.db
+
+And if you’re using /tmp (non-persistent), use this so data is always present after restarts:
+
+npx prisma migrate deploy && npx prisma db seed && node server.js
+
+Build Command -
+
+npm install
+
+Start Command -
+
+npx prisma migrate deploy && npx prisma db seed && node server.js
+

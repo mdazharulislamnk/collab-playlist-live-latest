@@ -1,0 +1,35 @@
+Deploy to Vercel
+Go to https://vercel.com → Add New Project
+Import your GitHub repo
+Framework Preset: Vite (or React)
+Root Directory: select your frontend folder (e.g. client/), not the server folder
+3) Set the environment variable on Vercel
+Vercel → Project → Settings → Environment Variables
+
+Add:
+
+Name
+
+Code
+VITE_API_URL
+Value
+
+Code
+https://collab-playlist-live-latest.onrender.com
+Environment: Production (and Preview too if you want)
+
+Then Redeploy (important—env vars apply only after redeploy).
+
+4) Verify in the deployed site
+Open DevTools → Network and confirm:
+
+Requests go to https://collab-playlist-live-latest.onrender.com/api/tracks
+Not localhost:4000
+Also confirm SSE:
+
+https://collab-playlist-live-latest.onrender.com/api/stream (EventStream stays open)
+5) If you get CORS error
+In your backend (server.js) temporarily allow all (you already do):
+
+js
+app.use(cors());
